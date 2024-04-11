@@ -1,0 +1,15 @@
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\bin\Debug\net6.0\Employee.Service.deps.json
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\bin\Debug\net6.0\Employee.Service.dll
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\bin\Debug\net6.0\Employee.Service.pdb
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\obj\Debug\net6.0\Employee.Service.csproj.AssemblyReference.cache
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\obj\Debug\net6.0\Employee.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\obj\Debug\net6.0\Employee.Service.AssemblyInfoInputs.cache
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\obj\Debug\net6.0\Employee.Service.AssemblyInfo.cs
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\obj\Debug\net6.0\Employee.Service.csproj.CoreCompileInputs.cache
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\obj\Debug\net6.0\Employee.Service.dll
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\obj\Debug\net6.0\refint\Employee.Service.dll
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\obj\Debug\net6.0\Employee.Service.pdb
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\obj\Debug\net6.0\ref\Employee.Service.dll
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\bin\Debug\net6.0\Employee.Core.dll
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\bin\Debug\net6.0\Employee.Core.pdb
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Service\obj\Debug\net6.0\Employee.Service.csproj.CopyComplete

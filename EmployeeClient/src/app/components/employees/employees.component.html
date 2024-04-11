@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="margin">
+    <div class="container mt-4 mb-4">
+        <table class="table whiteblue-table" class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Start Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let employee of (employees|async); let i = index ">
+                        <tr [class]="i % 2 === 0 ? 'white-row' : 'gray-row'">
+                            <td>{{ employee.firstName }}</td>
+                            <td>{{ employee.lastName }}</td>
+                            <td>{{ employee.id }}</td>
+                            <td>{{ employee.startDate | date }}</td>
+                            <td>
+                                <button class="btn btn-outline-danger btn-sm border-0"
+                                    (click)="onDeleteEmployee(employee)">
+                                    <img src="/assets/images/delete.svg" />
+                                </button>
+                                <button mat-raised-button class="btn btn-outline-primary btn-sm border-0"
+                                    (click)="onPutEmployee(employee)">
+                                    <img src="/assets/images/edit.svg" />
+
+                                </button>
+                            </td>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>

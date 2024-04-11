@@ -1,0 +1,12 @@
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\obj\Debug\net6.0\Employee.Core.csproj.AssemblyReference.cache
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\obj\Debug\net6.0\Employee.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\obj\Debug\net6.0\Employee.Core.AssemblyInfoInputs.cache
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\obj\Debug\net6.0\Employee.Core.AssemblyInfo.cs
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\obj\Debug\net6.0\Employee.Core.csproj.CoreCompileInputs.cache
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\bin\Debug\net6.0\Employee.Core.deps.json
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\bin\Debug\net6.0\Employee.Core.dll
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\bin\Debug\net6.0\Employee.Core.pdb
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\obj\Debug\net6.0\Employee.Core.dll
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\obj\Debug\net6.0\refint\Employee.Core.dll
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\obj\Debug\net6.0\Employee.Core.pdb
+D:\שיעורי בית\practycum project\Employee.Net\Employee.Core\obj\Debug\net6.0\ref\Employee.Core.dll
