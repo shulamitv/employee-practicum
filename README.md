@@ -1,6 +1,6 @@
 
 Employee Management System
-Welcome to our Employee Management System! This system is designed to streamline employee management tasks and provide a convenient user experience for administrators.
+Welcome to our Employee Management System! This system is designed to streamline employee management and provide a convenient user experience for employees.
 
 Features
 Adding Employees: Easily add new employees to the system.
