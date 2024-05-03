@@ -11,11 +11,13 @@ import { DataService } from '../../store/data.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-addemployee',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatDialogModule],
   templateUrl: './addemployee.component.html',
   styleUrl: './addemployee.component.css'
 })

@@ -19,30 +19,39 @@ export class EmployeesComponent {
 
   employees = this.dataService.employeeList
   filteredEmployees!: Employee[]
+  searchText = this.fb.control('');
 
   constructor(private employeeService: EmployeeService, private readonly dataService: DataService, private fb: FormBuilder, private dialog: MatDialog) { }
+  
+  ngOnInit(): void {
+    this.searchText.valueChanges.subscribe(value =>
+      this.dataService.fiterEmployee(value)
+    )
+  }
 
- 
+  filterEmployees() {
+    this.dataService.fiterEmployee(this.searchText.value)
+  }
 
   onDeleteEmployee(employee: Employee) {
-      this.employeeService.deleteEmployee(employee.id).subscribe(
-        () => {
-          this.dataService.getEmployees();
-          alert("employee deleted seccessfully");
-        },
-        (error) => {
-          console.error('Error deleting employee:', error);
-          alert("Failed to delete employee");
-        }
-      )
+    this.employeeService.deleteEmployee(employee.id).subscribe(
+      () => {
+        this.dataService.getEmployees();
+        alert("employee deleted seccessfully");
+      },
+      (error) => {
+        console.error('Error deleting employee:', error);
+        alert("Failed to delete employee");
+      }
+    )
   }
 
   onPutEmployee(employee: Employee) {
-      this.dialog.open(EditEmployeeComponent, {
-        data: { id: employee.id }, panelClass: 'custom-dialog-container'
-      },);
-    }
+    this.dialog.open(EditEmployeeComponent, {
+      data: { id: employee.id }, panelClass: 'custom-dialog-container'
+    },);
   }
+}
 
 
 

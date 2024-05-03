@@ -43,15 +43,6 @@ namespace Employee.Service
                     throw new ArgumentException($"{property.Name} is required.", property.Name);
                 }
             }
-  
-            var uniqueRoles = new HashSet<int>();
-            foreach (var roleForEmployee in employee.RolesForEmployees)
-            {
-                if (!uniqueRoles.Add(roleForEmployee.Id))
-                {
-                    throw new ArgumentException($"Role {roleForEmployee.Id} is already assigned to the employee.", nameof(employee.RolesForEmployees));
-                }
-            }
 
             return  await _employeeRepository.AddEmployeeAsync(employee);
         }

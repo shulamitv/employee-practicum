@@ -1,13 +1,14 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<button class="btn btn-light" (click)="onCloseForm()">
-    <img src="\assets\images\deleteX.svg">
-</button>
+<mat-dialog-actions align="end" >
+    <button class="w-10 btn btn-lg btn-primary" mat-button mat-dialog-close>
+      <img src="\assets\images\deleteX.svg">
+    </button>
+  </mat-dialog-actions>
 
-<div class="d-flex justify-content-center align-items-center vh-100 ">
+<mat-dialog-content class="mat-typography">
     <form class="my" [formGroup]="employeeForm" (ngSubmit)="onSubmit()" style="max-width: 1200px;">
-        <h1 class="h3 mb-3 fw-normal">hi, please enter details</h1>
         <div class="form-floating mb-3">
             <label for="firstname">first name</label>
             <input class="form-control" type="text" id="firstName" formControlName="firstName">
@@ -40,8 +41,8 @@
         </div>
 
         <div class="form-floating mb-3">
+            <label for="status">status</label>
             <select class="form-select form-control" aria-label="status" id="status" formControlName="status">
-                <option value="" disabled selected>status</option>
                 <option [ngValue]="true">Active</option>
                 <option [ngValue]="false">Inactive</option>
             </select>
@@ -95,6 +96,6 @@
         <div *ngIf="employeeForm.hasError('invalidEntryDate')">InvalidEntryDate.</div>
         <div *ngIf="rolesForEmployees.hasError('roleAlreadyExists')">Role already exists in the list.</div>
 
-        <button type="submit" class="w-100 btn btn-lg btn-primary" [disabled]="!employeeForm.valid">Add</button>
+        <button type="submit" class="w-100 btn btn-lg btn-primary" >Add</button>
     </form>
-</div>
+</mat-dialog-content>
