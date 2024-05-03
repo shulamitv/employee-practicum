@@ -12,12 +12,14 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 import { MatDialogModule } from '@angular/material/dialog';
-
-
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { MatChipsModule} from '@angular/material/chips';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @Component({
   selector: 'app-addemployee',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatDialogModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatDialogModule, MatFormFieldModule, MatChipsModule, MatIconModule, MatFormFieldModule, MatFormFieldModule],
   templateUrl: './addemployee.component.html',
   styleUrl: './addemployee.component.css'
 })

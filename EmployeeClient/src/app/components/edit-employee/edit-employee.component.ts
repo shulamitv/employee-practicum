@@ -9,11 +9,12 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { ValidationService } from '../../services/validation.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DataService } from '../../store/data.service';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-employee',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, MatDialogModule],
   templateUrl: './edit-employee.component.html',
   styleUrl: './edit-employee.component.css'
 })

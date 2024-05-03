@@ -7,6 +7,7 @@ import { HeaderComponent } from "../header/header.component";
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 import { DataService } from '../../store/data.service';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-employees',
@@ -20,13 +21,17 @@ export class EmployeesComponent {
   employees = this.dataService.employeeList
   filteredEmployees!: Employee[]
   searchText = this.fb.control('');
+  activeEmployees$: Observable<Employee[]> | undefined;
 
   constructor(private employeeService: EmployeeService, private readonly dataService: DataService, private fb: FormBuilder, private dialog: MatDialog) { }
-  
+
   ngOnInit(): void {
     this.searchText.valueChanges.subscribe(value =>
       this.dataService.fiterEmployee(value)
     )
+    this.activeEmployees$ = this.dataService.employeeList.pipe(
+      map(employees => employees.filter(employee => employee.status === true))
+    );
   }
 
   filterEmployees() {

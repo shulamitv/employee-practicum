@@ -1,11 +1,11 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-<mat-dialog-actions align="end" >
+<mat-dialog-actions align="end">
     <button class="w-10 btn btn-lg btn-primary" mat-button mat-dialog-close>
-      <img src="\assets\images\deleteX.svg">
+        <img src="\assets\images\deleteX.svg">
     </button>
-  </mat-dialog-actions>
+</mat-dialog-actions>
 
 <mat-dialog-content class="mat-typography">
     <form class="my" [formGroup]="employeeForm" (ngSubmit)="onSubmit()" style="max-width: 1200px;">
@@ -30,7 +30,7 @@
                     characters.</div>
             </div>
         </div>
-
+        
         <div class="form-floating mb-3">
             <label for="startDate">start date</label>
             <input class="form-control" type="date" id="startDate" formControlName="startDate" start date>
@@ -68,27 +68,27 @@
         </div>
         <div>
 
-        <label for="role">Roles:</label>
-        <div formArrayName="rolesForEmployees" *ngFor="let role of rolesForEmployees.controls; let i = index"
-            class="role-group" class="d-flex align-items-center">
-            <div [formGroupName]="i">
-                <select formControlName="roleDId" class="form-select form-control">
-                    <option *ngFor="let option of rolesList" [value]="option.id">{{ option.roleName }}</option>
-                </select>
-                <input formControlName="roleName" type="hidden" readonly>
-                <label for="entry date">entry date:</label>
-                <input formControlName="entryDate" type="date" class="form-select form-control">
-                <label for="entry date">isManagerial:</label>
-                <select formControlName="isManagerial" class="form-select form-control">
-                    <option [ngValue]="false">false</option>
-                    <option [ngValue]="true">true</option>
-                </select>
-                <button type="button" (click)="removeRole(i)" >
-                    <img src="/assets/images/deleteX.svg" />
-                </button>
-            </div>
+            <label for="role">Roles:</label>
+            <div formArrayName="rolesForEmployees" *ngFor="let role of rolesForEmployees.controls; let i = index"
+                class="role-group" class="d-flex align-items-center">
+                <div [formGroupName]="i">
+                    <select formControlName="roleDId" class="form-select form-control">
+                        <option *ngFor="let option of rolesList" [value]="option.id">{{ option.roleName }}</option>
+                    </select>
+                    <input formControlName="roleName" type="hidden" readonly>
+                    <label for="entry date">entry date:</label>
+                    <input formControlName="entryDate" type="date" class="form-select form-control">
+                    <label for="entry date">isManagerial:</label>
+                    <select formControlName="isManagerial" class="form-select form-control">
+                        <option [ngValue]="false">false</option>
+                        <option [ngValue]="true">true</option>
+                    </select>
+                    <button type="button" (click)="removeRole(i)">
+                        <img src="/assets/images/deleteX.svg" />
+                    </button>
+                </div>
 
-        </div>
+            </div>
 
         </div>
 
@@ -96,6 +96,6 @@
         <div *ngIf="employeeForm.hasError('invalidEntryDate')">InvalidEntryDate.</div>
         <div *ngIf="rolesForEmployees.hasError('roleAlreadyExists')">Role already exists in the list.</div>
 
-        <button type="submit" class="w-100 btn btn-lg btn-primary" >Add</button>
+        <button type="submit" class="w-100 btn btn-lg btn-primary">Add</button>
     </form>
 </mat-dialog-content>

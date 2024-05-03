@@ -17,7 +17,7 @@ namespace Employee.Data.Repositories
         }
         public async Task<IEnumerable<EmployeeD>> GetEmployeesAsync()
         {
-            return await _context.Employees.Include(u => u.RolesForEmployees).Where(e => e.Status == true).ToListAsync();
+            return await _context.Employees.Include(u => u.RolesForEmployees).ToListAsync();
         }
         public async Task<EmployeeD> GetEmployeeAsync(int id)
         {

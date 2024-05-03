@@ -32,7 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                <ng-container *ngFor="let employee of (employees|async); let i = index ">
+                <ng-container *ngFor="let employee of (activeEmployees$|async); let i = index ">
                         <tr [class]="i % 2 === 0 ? 'white-row' : 'gray-row'">
                             <td>{{ employee.firstName }}</td>
                             <td>{{ employee.lastName }}</td>
