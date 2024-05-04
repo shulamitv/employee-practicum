@@ -8,39 +8,13 @@
 }
 
 ::ng-deep.custom-dialog-container {
-  bottom: 10vh;
-  display: flex;
-  margin: auto;
   width: 30vw;
   height: 80vh;
-  position: relative !important;
-  /* z-index: 100000; */
-}
+} 
 
 .cloudy-backdrop {
   backdrop-filter: blur(8px); 
 }
-
-::ng-deep.custom-dialog-container ::ng-deep ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  ::ng-deep.custom-dialog-container ::ng-deep ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  ::ng-deep.custom-dialog-container ::ng-deep ::-webkit-scrollbar-thumb {
-    background: #888;
-  }
-  
-  ::ng-deep.custom-dialog-container ::ng-deep ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-  ::ng-deep.custom-dialog-container * {
-    scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
-  }
 
   .margin{
     margin-top: 130px;

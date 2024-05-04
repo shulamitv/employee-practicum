@@ -34,8 +34,8 @@
 
         <div class="form-floating mb-3">
             <label for="startDate">Start Date</label>
-            <input class="form-control" onfocus="(this.type='date')" type="date" id="startDate"
-                formControlName="startDate" placeholder="Start Date">
+            <input class="form-control"  type="date" id="startDate"
+                formControlName="startDate" [value]="startDate | date: 'dd/MM/yyyy h:mm a'" >
             <div *ngIf="employeeForm.get('startDate')?.invalid && (employeeForm.get('startDate')?.dirty || employeeForm.get('startDate')?.touched)"
                 class="text-danger">
                 <div *ngIf="employeeForm.get('startDate')?.errors?.['required']">Start date is required.</div>
@@ -53,7 +53,7 @@
 
         <div class="form-floating mb-3">
             <label for="birthDate">Birth Date</label>
-            <input [(ngModel)]="birthDate" class="form-control" type="date" id="birthDate" formControlName="birthDate">
+            <input class="form-control" type="date" id="birthDate" formControlName="birthDate">
             <div *ngIf="employeeForm.get('birthDate')?.invalid && (employeeForm.get('birthDate')?.dirty || employeeForm.get('birthDate')?.touched)"
                 class="text-danger">
                 <div *ngIf="employeeForm.get('birthDate')?.errors?.['required']">Birth date is required.</div>

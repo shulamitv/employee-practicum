@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EmployeeService } from '../../services/employee.service';
@@ -16,19 +16,20 @@ import { MatDialogModule } from '@angular/material/dialog';
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule, MatDialogModule],
   templateUrl: './edit-employee.component.html',
-  styleUrl: './edit-employee.component.css'
+  styleUrl: './edit-employee.component.css',
+  providers: [DatePipe]
 })
 
 
 
 export class EditEmployeeComponent {
-  
+
   id!: number;
   employeeForm: FormGroup = this.formBuilder.group({
     firstName: ['', [Validators.required, Validators.minLength(2)]],
     lastName: ['', [Validators.required, Validators.minLength(2)]],
     id: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(9)]],
-    startDate: [new Date(), Validators.required],
+    startDate: ['', Validators.required],
     status: ['', Validators.required],
     birthDate: [new Date(), Validators.required],
     gender: ['', Validators.required],
@@ -42,7 +43,7 @@ export class EditEmployeeComponent {
 
   constructor(private readonly dataService: DataService, private dialogRef: MatDialogRef<EditEmployeeComponent>,
     @Inject(MAT_DIALOG_DATA) data: { id: number },
-    private employeeService: EmployeeService, private roleService: RoleService, private formBuilder: FormBuilder, private validationService: ValidationService) {
+    private employeeService: EmployeeService, private roleService: RoleService, private formBuilder: FormBuilder, private validationService: ValidationService, private datePipe: DatePipe) {
     this.id = data.id
   }
 
@@ -56,17 +57,19 @@ export class EditEmployeeComponent {
 
     this.employeeService.getEmployeeById(this.employeeId ?? 0).subscribe(
       (res) => {
+        console.log(new Date(res.startDate));
         this.employeeForm.patchValue({
           firstName: res.firstName,
           lastName: res.lastName,
           id: res.id,
-          startDate: new Date(res.startDate),
+          startDate: this.datePipe.transform(res.startDate, 'yyyy-MM-dd'),
           status: res.status,
-          birthDate: res.birthDate,
+          birthDate: this.datePipe.transform(res.birthDate, 'yyyy-MM-dd'),
           gender: res.gender,
         });
 
         this.patchRolesForEmployees(res.rolesForEmployees);
+
       }),
       (error: HttpErrorResponse) => {
         console.error('Error fetching employee:', error);
@@ -77,7 +80,8 @@ export class EditEmployeeComponent {
     this.rolesForEmployees.clear();
     if (roles && roles.length > 0) {
       roles.forEach(role => {
-        this.rolesForEmployees.push(this.formBuilder.group({ roleDId: [role.roleDId], roleName: [role.roleName], entryDate: [role.entryDate], isManagerial: [role.isManagerial] }));
+      const formattedDate = this.datePipe.transform(role.entryDate, 'yyyy-MM-dd');
+        this.rolesForEmployees.push(this.formBuilder.group({ roleDId: [role.roleDId], roleName: [role.roleName], entryDate: [formattedDate], isManagerial: [role.isManagerial] }));
       });
     }
   }
